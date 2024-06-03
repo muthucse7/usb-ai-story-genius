@@ -1,0 +1,22 @@
+{
+  "name": "usb-ai-story-genius",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js"
+  },
+  "author": "Muthu Selvam <mselvam@uncc.edu>",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/ai-form-recognizer": "^5.0.0",
+    "@azure/ai-text-analytics": "^5.1.0",
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "fs": "0.0.1-security",
+    "multer": "^1.4.5-lts.1",
+    "request": "^2.88.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}

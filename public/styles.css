@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .output-container {
+    margin-top: 20px;
+  }
+  
+  .spinner-border-container {
+    display: none; /* Initially hide the spinner */
+  }
+  
+  /* Custom styles for header and footer */
+  header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    margin-top: auto; /* Sticky footer */
+  }
+  
+  .student-info {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
