@@ -11,12 +11,13 @@
   "dependencies": {
     "@azure/ai-form-recognizer": "^5.0.0",
     "@azure/ai-text-analytics": "^5.1.0",
+    "@azure/identity": "^4.2.1",
+    "@azure/openai": "^1.0.0-beta.12",
     "body-parser": "^1.19.1",
+    "dotenv": "^16.4.5",
     "express": "^4.17.2",
     "fs": "0.0.1-security",
     "multer": "^1.4.5-lts.1",
-    "request": "^2.88.2",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.0"
+    "request": "^2.88.2"
   }
 }

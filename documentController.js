@@ -16,9 +16,13 @@ async function handleExtractText(req, res) {
         // Extract text from the document
         const content = await documentModel.extractText(filePath);
 
+        // Generate user stories from the extracted content
+        const userStories = await documentModel.generateUserStories(content);
+
         // Prepare response data
         const responseData = {
-            document: { content }
+            // document: { content },
+            userStories: { userStories }
         };
 
         // Send response

@@ -1,9 +1,6 @@
-// index.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
-const swaggerUi = require('swagger-ui-express');
-const swaggerJSDoc = require('swagger-jsdoc');
 const documentController = require('./documentController');
 
 const app = express();
@@ -14,62 +11,21 @@ app.use(bodyParser.json());
 app.use(express.static('public')); // Serve static files from 'public' directory
 
 // Configure Multer for handling file uploads
-const upload = multer({ dest: 'public/uploads/' });
-
-// Swagger definition
-const swaggerOptions = {
-    swaggerDefinition: {
-        info: {
-            title: 'Document Intelligence API',
-            description: 'API for extracting text from documents using Azure AI Document Intelligence',
-            version: '1.0.0'
-        },
-        servers: [{
-            url: 'http://localhost:3000',
-            description: 'Development server'
-        }]
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'public/uploads/');
     },
-    apis: ['index.js'] // Specify the file that contains your route definitions
-};
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+const upload = multer({ storage });
 
-const swaggerSpec = swaggerJSDoc(swaggerOptions);
-
-// Serve Swagger documentation
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-// Route to handle file upload and text extraction
-/**
- * @swagger
- * /extractText:
- *   post:
- *     summary: Extract text from a document
- *     consumes:
- *       - multipart/form-data
- *     parameters:
- *       - in: formData
- *         name: file
- *         type: file
- *         required: true
- *         description: The document file to be processed
- *     responses:
- *       '200':
- *         description: Successful operation
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 document:
- *                   type: object
- *                   properties:
- *                     content:
- *                       type: string
- *                       description: Extracted text from the document
- */
+// Endpoint for extracting text
 app.post('/extractText', upload.single('file'), documentController.handleExtractText);
 
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port http://localhost:${PORT}/`);
 });

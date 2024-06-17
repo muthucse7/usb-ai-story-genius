@@ -14,15 +14,18 @@ body {
   
   /* Custom styles for header and footer */
   header {
-    background-color: #007bff;
-    color: white;
+    background-color: #f5f5fa;
+    color: #001e79;
     padding: 10px 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12);
   }
   
   footer {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    margin-top: auto; /* Sticky footer */
+    background-color: #001e79;
+    padding: 5px 0;
+    margin-top: auto;
+    color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12);
   }
   
   .student-info {
@@ -31,3 +34,27 @@ body {
     margin-bottom: 20px;
   }
   
+  .usb_logo{
+    width: 120px;
+    height: 55px;
+  }
+  .font18{
+    font-size: 22px;
+  }
+  .font12{
+    font-size: 14px;
+  }
+  .left_content{
+    float: left;
+  }
+  .right_content{
+    float: right;
+    text-align: center;
+  }
+  .footer_text{
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .margin-top-1rem{
+    margin-top: 1rem;
+  }
