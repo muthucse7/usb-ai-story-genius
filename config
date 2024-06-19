@@ -1,4 +1,9 @@
+require('dotenv').config(); // Ensure this line is at the top
+
 module.exports = {
-    azureAIEndpoint: "xyz",
-    azureAIApiKey: "xyz"
+    azureDocumentIntelligenceAIEndpoint: process.env.AZURE_DOCUMENT_INTELLIGENCE_AI_ENDPOINT,
+    azureDocumentIntelligenceAIApiKey: process.env.AZURE_DOCUMENT_INTELLIGENCE_AI_API_KEY,
+    azureOpenAIServiceEndpoint: process.env.AZURE_OPENAI_SERVICE_ENDPOINT,
+    azureOpenAIServiceApiKey: process.env.AZURE_OPENAI_SERVICE_API_KEY,
+    openAIApiKey: process.env.OPENAI_API_KEY,
 };
